@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apod</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <header>
+        <img class="apod" id="apod" src="./img/Apod.png" alt="Apod">
+        <img class="coloque" id="coloque" src="./img/Coloque a sua data abaixo.png" alt=" Data">
+    </header>
+    <main class="botao">
+        <input type="date" name="data" id="data">
+        <button id="btn" for="data">Lets Go</button>
+    </main>
+    <div class="result" id="result">
+        <h2 class="titulo"></h2>
+        <iframe class="video"></iframe>
+        <img class="imagem" src="" alt="">
+        <p class="descri"></p>
+    </div>
+    <footer>
+        <!-- <h2>Desenvolvido por Guilherme Cordeiro Da Mata - para fins estritamente didáticos</h2> -->
+        <img src="./img/Dev.png" alt="Dev">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
