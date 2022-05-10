@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -15,17 +15,16 @@
         <img class="coloque" id="coloque" src="./img/Coloque a sua data abaixo.png" alt=" Data">
     </header>
     <main class="botao">
-        <input type="date" name="data" id="data">
+        <input type="date" min="01/06/1995" name="data" id="data">
         <button id="btn" for="data">Lets Go</button>
     </main>
     <div class="result" id="result">
-        <h2 class="titulo"></h2>
-        <iframe class="video"></iframe>
-        <img class="imagem" src="" alt="">
-        <p class="descri"></p>
+        <h2 class="titulo"></h2> <!--fiz uma h2 vazio que recebe o titulo da api-->
+        <iframe class="video"></iframe><!--fiz um iframe(para video) vazia que recebe um video caso da data da api seja em formato de video -->
+        <img class="imagem" src="" alt=""> <!--fiz uma img(para imagem) vazia que recebe uma imagem caso da data da api seja em formato de imagem -->
+        <p class="descri"></p> <!--fiz uma tag p vazia para receber a descrição da api -->
     </div>
     <footer>
-        <!-- <h2>Desenvolvido por Guilherme Cordeiro Da Mata - para fins estritamente didáticos</h2> -->
         <img src="./img/Dev.png" alt="Dev">
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
