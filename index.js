@@ -1,6 +1,7 @@
     $(".video").hide() // ele esconde o  tag de video (.hide)
     $('#btn').click(function () { //esse é a achão do botão 
         var data = $('#data').val(); // ele esta pegando a data que o usuario selecionou e add na api 
+        console.log(data);
         $.ajax({ // o começo da api
             url: `https:api.nasa.gov/planetary/apod?api_key=ZrXw96z5JVLotfMMIt7IZYsjjwFgjEJzD2tLzhdg&date=${data}`, // add a url da api + a key(chave) &date = ${data}
             success: function (data) { //se a api der certo "success"  
@@ -19,6 +20,7 @@
 
             },
             error: function (erro) { // se a api der erro "error "
+                console.error(erro)
                 alert('Deu erro, tente novamente  ') // aparece um alerta dizendo que deu erro 
             }
         })
