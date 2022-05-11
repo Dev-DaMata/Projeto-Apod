@@ -2,7 +2,10 @@
     $('#btn').click(function () { //esse é a achão do botão 
         const data = $('#data').val(); // ele esta pegando a data que o usuario selecionou e add na api 
         console.log(data);
-        const url = `https://api.nasa.gov/planetary/apod?api_key=ZrXw96z5JVLotfMMIt7IZYsjjwFgjEJzD2tLzhdg&date=${data}`
+       requisicao(data) 
+    })
+function requisicao(data){
+    const url = `https://api.nasa.gov/planetary/apod?api_key=ZrXw96z5JVLotfMMIt7IZYsjjwFgjEJzD2tLzhdg&date=${data}`
         $.ajax({ // o começo da api
             url: url, // add a url da api + a key(chave) &date = ${data}
             method:"GET",
@@ -11,13 +14,13 @@
                 $(".titulo").text(data.title)//estou chamando o id do titulo, .text significa texto
                 $(".imagem").attr("src", data.url)//estou chamando o id da img, attr(significa atributo)
                 $(".descri").text(data.explanation)//estou chamando o id do descri, text significa texto
-                // if (data.media_type == 'video') { //se o media_type for video
-                //     $(".video").attr("src", data.url).show()// vai aparecer a tag de video(.show())
-                //     $(".imagem").hide()//e esconde a tag (.hide())
-                // } else if (data.media_type == 'image') { // se o media_type for imagem
-                //     $(".imagem").attr("src", data.url).show()// vai aparecer a tag de imagem(.show())
-                //     $(".video").hide()//e esconde a tag (.hide())
-                // }
+                if (data.media_type == 'video') { //se o media_type for video
+                    $(".video").attr("src", data.url).show()// vai aparecer a tag de video(.show())
+                    $(".imagem").hide()//e esconde a tag (.hide())
+                } else if (data.media_type == 'image') { // se o media_type for imagem
+                    $(".imagem").attr("src", data.url).show()// vai aparecer a tag de imagem(.show())
+                    $(".video").hide()//e esconde a tag (.hide())
+                }
 
 
             },
@@ -26,9 +29,8 @@
                 alert('Deu erro, tente novamente  ') // aparece um alerta dizendo que deu erro 
             }
         })
-    })
-
-
+}
+     
 
     function result(saida) { // função do result do html
         const imagem = $("#imagem") // pegando a imagem da api
