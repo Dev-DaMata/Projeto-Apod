@@ -3,7 +3,7 @@
         const data = $('#data').val(); // ele esta pegando a data que o usuario selecionou e add na api 
         console.log(data);
         $.ajax({ // o começo da api
-            url: `https:api.nasa.gov/planetary/apod?api_key=ZrXw96z5JVLotfMMIt7IZYsjjwFgjEJzD2tLzhdg&date=${data}`, // add a url da api + a key(chave) &date = ${data}
+            url: `https://api.nasa.gov/planetary/apod?api_key=ZrXw96z5JVLotfMMIt7IZYsjjwFgjEJzD2tLzhdg&date=${data}`, // add a url da api + a key(chave) &date = ${data}
             success: function (data) { //se a api der certo "success"  
                 console.log(data);
                 $(".titulo").text(data.title)//estou chamando o id do titulo, .text significa texto
