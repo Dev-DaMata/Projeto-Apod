@@ -1,4 +1,4 @@
-    $(".video").hide() // ele esconde o  tag de video (.hide)
+    $("#video").hide() // ele esconde o  tag de video (.hide)
     $('#btn').click(function () { //esse é a achão do botão 
         const data = $('#data').val(); // ele esta pegando a data que o usuario selecionou e add na api 
         console.log(data);
@@ -11,15 +11,15 @@ function requisicao(data){
             method:"GET",
             success: function (data) { //se a api der certo "success"  
                 console.log(data);
-                $(".titulo").text(data.title)//estou chamando o id do titulo, .text significa texto
-                $(".imagem").attr("src", data.url)//estou chamando o id da img, attr(significa atributo)
-                $(".descri").text(data.explanation)//estou chamando o id do descri, text significa texto
+                $("#titulo").text(data.title)//estou chamando o id do titulo, .text significa texto
+                $("#imagem").attr("src", data.url)//estou chamando o id da img, attr(significa atributo)
+                $("#descri").text(data.explanation)//estou chamando o id do descri, text significa texto
                 if (data.media_type == 'video') { //se o media_type for video
-                    $(".video").attr("src", data.url).show()// vai aparecer a tag de video(.show())
-                    $(".imagem").hide()//e esconde a tag (.hide())
+                    $("#video").attr("src", data.url).show()// vai aparecer a tag de video(.show())
+                    $("#imagem").hide()//e esconde a tag (.hide())
                 } else if (data.media_type == 'image') { // se o media_type for imagem
-                    $(".imagem").attr("src", data.url).show()// vai aparecer a tag de imagem(.show())
-                    $(".video").hide()//e esconde a tag (.hide())
+                    $("#imagem").attr("src", data.url).show()// vai aparecer a tag de imagem(.show())
+                    $("#video").hide()//e esconde a tag (.hide())
                 }
 
 
